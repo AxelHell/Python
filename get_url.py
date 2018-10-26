@@ -6,7 +6,8 @@ import re
 import json
 
 user_id = 12345
-search_url = "https://www.investing.com/search/?q=fbr".format(user_id)
+
+search_url = "https://www.investing.com/search/?q=%s".format(user_id)
 headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36'}
 r = requests.get(search_url, headers = headers)
 b = bs4.BeautifulSoup(r.text, "html.parser")
